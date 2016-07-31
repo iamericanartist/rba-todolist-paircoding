@@ -5,6 +5,9 @@ Team coded with [Dan Day](https://github.com/danrday)!
 <!--![To Do List](toDoList.jpg?raw=true "To Do List Screenshot")-->
 <!--[Check it out on CODEPEN](http://codepen.io/IAmericanArtist)-->
 
+## Deployed to Firebase Hosting / ng-todo-demo-98429
+- https://ng-todo-demo-98429.firebaseapp.com
+
 ## Instructions
 
 Pair code a Simple To Do List application with a classmate. Using what we group coded in class, tie into Firebase and use what you've learned so far in AngularJS to pull it all together.  
