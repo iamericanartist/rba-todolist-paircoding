@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default" ng-controller="NavCtrl">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Todo App</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right" ng-repeat="thingy in navItems">
+        <li><a href="{{thingy.url}}">{{thingy.name}}</a></li>
+      </ul>
+    </div>
+  </div> <!-- end class="container-fluid"  -->
+</nav> <!-- end class="navbar navbar-default" ng-controller="NavCtrl" -->
+
+
+
+
+<!-- <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a ng-href="#/items/list">All Items</a></li>
+        <li><a ng-href="#/items/new">New Item</a></li>
+        <li><a ng-href= "#/logout" ng-hide="!hasUser">Logout</a></li>
+        <li><a ng-href= "#/login" ng-hide="hasUser">Login</a></li>
+      </ul>
+    </div>
+  </nav> -->
