@@ -1,5 +1,7 @@
 "use strict";
+
 app.factory("AuthFactory", function(){
+
   let currentUserId = null;
   let provider = new firebase.auth.GoogleAuthProvider();
   console.log("provider", provider);
@@ -10,11 +12,13 @@ app.factory("AuthFactory", function(){
       currentUserId = user.uid;
     } else {
       console.log("User not logged in");
+      currentUserId = null;
     }
   });
+
   let authWithProvider = function() {
     return firebase.auth().signInWithPopup(provider);
-  }
+  };
 
   let isAuthenticated = function() {
     return (currentUserId) ? true : false;
@@ -22,6 +26,11 @@ app.factory("AuthFactory", function(){
 
   let getUser = function() {
     return currentUserId;
-  }
-  return {authWithProvider, isAuthenticated, getUser};
+  };
+
+  let setUser = function(input) {
+    currentUserId = input;
+  };
+
+  return {authWithProvider, isAuthenticated, getUser, setUser};
 });

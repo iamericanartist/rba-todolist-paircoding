@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module("TodoApp", ["ngRoute"])
+var app = angular.module("TodoApp", ["ngRoute"])    // LINK TO 'NG-VIEW' IN THE DOM
 .constant("FirebaseURL", "https://ng-todo-demo-98429.firebaseio.com/");
 
 app.config(function($routeProvider, FBCreds) {     // $routeProvider is intrinsic to Angular
@@ -11,6 +11,10 @@ app.config(function($routeProvider, FBCreds) {     // $routeProvider is intrinsi
   firebase.initializeApp(authConfig);
   
   $routeProvider.
+    when('/login', {
+      templateUrl: 'partials/login.html',
+      controller: 'LoginCtrl'
+    }).
     when("/items/list", {
       templateUrl: "partials/item-list.html",
       controller: "ItemListCtrl"
@@ -23,5 +27,20 @@ app.config(function($routeProvider, FBCreds) {     // $routeProvider is intrinsi
       templateUrl: "partials/item-details.html",
       controller: "ItemViewCtrl"
     }).
-    otherwise('/items/list');
+    otherwise('/login');
+});
+
+//what is this doing below???
+app.controller('TodoCtrl', function($scope) {
+  $scope.showListView = true;
+ 
+  $scope.allItem = function() {
+  console.log("You clicked all item");
+  $scope.showListView = true;
+};
+
+  $scope.newItem = function() {
+    console.log("You clicked new Item");
+    $scope.showListView = false;
+  };
 });
